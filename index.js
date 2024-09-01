@@ -15,7 +15,7 @@ const emailForm = document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://quick-share-z83t.onrender.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
@@ -35,7 +35,7 @@ dropZone.addEventListener("drop", (e) => {
       fileInput.files = files;
       uploadFile();
     } else {
-      showToast("Max file size is 100MB");
+      showToast("Max file size is 20GB");
     }
   } else if (files.length > 1) {
     showToast("You can't upload multiple files");
@@ -59,7 +59,7 @@ dropZone.addEventListener("dragleave", (e) => {
 // file input change and uploader
 fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
-    showToast("Max file size is 100MB");
+    showToast("Max file size is 20GB");
     fileInput.value = ""; // reset the input
     return;
   }
